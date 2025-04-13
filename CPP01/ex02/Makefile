@@ -1,15 +1,15 @@
-NAME = zombieHorde
+NAME = brain
 
 CC = c++
 CFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRC = main.cpp Zombie.cpp zombieHorde.cpp
+SRC = main.cpp 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@echo "$(BBLUE)Creating Zombie Horde...$(NC)"
+	@echo "$(BBLUE)Creating brain...$(NC)"
 	@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 %.o: %.cpp
@@ -20,7 +20,7 @@ clean:
 	@rm -f $(OBJ)
 
 fclean: clean
-	@echo "$(RED)Removing Zombie Horde..$(NC)"
+	@echo "$(RED)Removing brain Progam..$(NC)"
 	@rm -f $(NAME)
 
 re: fclean all
