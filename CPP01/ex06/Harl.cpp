@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mi-matias <mi-matias@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 17:52:31 by mi-matias         #+#    #+#             */
-/*   Updated: 2025/04/18 22:08:47 by mi-matias        ###   ########.fr       */
+/*   Created: 2025/04/18 20:55:00 by mi-matias         #+#    #+#             */
+/*   Updated: 2025/04/18 22:08:59 by mi-matias        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 Harl::Harl()
 {
-    //std::cout << "Harl Constructer called." << std::endl;
+    //std::cout << "Harl constructer Called." << std::endl;
 }
 
 Harl::~Harl()
 {
-    //std::cout << "Harl Destructer Callled." << std::endl;
+    //std::cout << "Harl Destructer Called"<< std::endl;
 }
 void Harl::debug()
 {
@@ -38,25 +38,33 @@ void Harl::error()
 {
     std::cout << "This is unacceptable! I want to speak to the manager now." << std::endl;
 }
-
+int getIndexLevel(std::string level)
+{
+    std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+    int i;
+    i = 0;
+    while(i < 4 && level != levels[i])
+        i++;
+    return(i);
+}
 void Harl::complain(std::string level)
 {
-    // Array de strings:
     std::string levels[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
-    // Array de ponteiros para as funcoes:
-    void (Harl::*ptrFunctions[4])() = {
+    void (Harl::*ptrFunc[4])() = {
         &Harl::debug,
         &Harl::info,
         &Harl::warning,
-        &Harl::error        
+        &Harl::error
     };
-    
-    for(int i = 0; i <= 3; i++)
+    for(int i = 0; i < 4; i++)
     {
         if(level == levels[i])
         {
-            (this->*ptrFunctions[i])();
-            return;          
+            std::cout << "[ " << levels[i] << " ]"<< std::endl;
+            (this->*ptrFunc[i])();
+            std::cout <<std:: endl;
+            return ;
         }
     }
+   
 }
