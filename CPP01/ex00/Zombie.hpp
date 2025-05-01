@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombie.hpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mi-matias <mi-matias@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mfrancis <mfrancis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 16:24:47 by mi-matias         #+#    #+#             */
-/*   Updated: 2025/04/12 21:05:37 by mi-matias        ###   ########.fr       */
+/*   Updated: 2025/05/01 15:24:23 by mfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@
 class Zombie
 {
     public:
-    // Zombie();
-    Zombie(std::string str_name);
-    ~Zombie();
+	    Zombie(std::string str_name);
+    	~Zombie();
     
     void announce();
         

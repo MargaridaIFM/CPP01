@@ -6,11 +6,11 @@
 /*   By: mfrancis <mfrancis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 16:28:44 by mi-matias         #+#    #+#             */
-/*   Updated: 2025/04/13 22:27:33 by mfrancis         ###   ########.fr       */
+/*   Updated: 2025/05/01 15:38:30 by mfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "zombie.hpp"
+#include "Zombie.hpp"
 
 Zombie:: Zombie()
 {
@@ -18,7 +18,7 @@ Zombie:: Zombie()
 }
 Zombie:: ~Zombie()
 {
-    std:: cout << "Zombie Destructor Called" << std::endl;
+    std:: cout << name << ": Zombie Destructor Called" << std::endl;
 }
 
 void Zombie:: announce()

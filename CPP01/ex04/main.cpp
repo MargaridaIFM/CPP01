@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mi-matias <mi-matias@student.42.fr>        +#+  +:+       +#+        */
+/*   By: mfrancis <mfrancis@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 20:25:55 by mi-matias         #+#    #+#             */
-/*   Updated: 2025/04/18 20:48:36 by mi-matias        ###   ########.fr       */
+/*   Updated: 2025/05/01 16:10:08 by mfrancis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,17 +30,20 @@ int FindReplaceInfile(const std:: string& filename, const std::string& s1, const
     std::string line;
     while(std::getline(infile, line))
     {
-        std::string newLine;
-      std::size_t pos = 0;
-      std::size_t new_pos = 0;
-      while((pos = line.find(s1, new_pos)) != std::string::npos)
-      {
-        newLine += line.substr(new_pos, pos - new_pos);
-        newLine += s2;
-        new_pos = pos + s1.length(); 
-     }
-    newLine += line.substr(new_pos);
-    newFile << newLine << "\n";
+    	std::string newLine;
+      	std::size_t pos = 0;
+      	std::size_t new_pos = 0;
+		
+      	while((pos = line.find(s1, new_pos)) != std::string::npos)
+      	{
+      	  newLine += line.substr(new_pos, pos - new_pos);
+      	  newLine += s2;
+      	  new_pos = pos + s1.length(); 
+     	}
+    	newLine += line.substr(new_pos);
+		if (!infile.eof())
+			newLine += '\n';
+    	newFile << newLine;
     }
     infile.close();
     newFile.close();

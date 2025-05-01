@@ -1,7 +1,7 @@
 NAME = harlFilter
 
 CC = c++
-CFLAGS = -std=c++98 -Wall -Wextra -Werror
+CFLAGS = -std=c++98 -Wall -Wextra -Werror -g
 
 SRC = main.cpp Harl.cpp
 OBJ = $(SRC:.cpp=.o)
